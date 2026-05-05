@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>UI Design</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  background: #FFF8EC;
+}
+
+/* ================= BACKGROUND ================= */
+.bg {
+  position: fixed;
+  inset: 0;
+  background: url("https://i.pinimg.com/1200x/59/c9/e0/59c9e09444f756ef56a4db202dbcf7a7.jpg")
+    center/cover no-repeat;
+  transform: scale(1.08);
+  filter: blur(4px) brightness(0.65);
+  z-index: 0;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(20,30,15,0.55),
+    rgba(84,107,65,0.35),
+    rgba(0,0,0,0.65)
+  );
+  z-index: 1;
+}
+
+/* ================= CENTER TEXT ================= */
+.center-text {
+  position: fixed;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 5;
+}
+
+.center-text .main {
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #DCCCAC;
+  opacity: 0.9;
+}
+
+.center-text .sub {
+  font-size: 10px;
+  color: #99AD7A;
+  margin-top: 4px;
+}
+
+/* ================= LEFT CARD ================= */
+.left-card {
+  position: fixed;
+  left: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+  padding: 20px;
+  background: rgba(84, 107, 65, 0.35);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+
+  /* FIX layering */
+  z-index: 10;
+}
+
+/* ================= HEADER ================= */
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.left-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.call-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: #99AD7A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFF8EC;
+}
+
+.card-title {
+  font-size: 11px;
+  color: #FFF8EC;
+  letter-spacing: 2px;
+  margin-top: 10px;
+}
+
+/* avatar kanan */
+.avatar {
+  width: 90px;
+  height: 110px;
+  border-radius: 14px;
+  background: url("m1.jpg") center/cover;
+  border: 2px solid rgba(220,204,172,0.4);
+
+  /* FIX hover */
+  position: relative;
+  z-index: 11;
+  transition: 0.3s;
+}
+
+.avatar:hover {
+  transform: scale(1.05);
+}
+
+/* ================= INNER CARD ================= */
+.inner-card {
+  background: linear-gradient(135deg, #546B41, #6f8756);
+  border-radius: 16px;
+  padding: 15px;
+  color: #FFF8EC;
+}
+
+.name-main {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.tagline {
+  font-size: 11px;
+  color: #DCCCAC;
+}
+
+.line {
+  height: 1px;
+  background: rgba(220,204,172,0.3);
+  margin: 10px 0;
+}
+
+/* ================= UPLOAD CARD ================= */
+.upload-card {
+  margin-top: 12px;
+  background: rgba(84,107,65,0.35);
+  border-radius: 14px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.preview-group {
+  display: flex;
+  gap: 8px;
+}
+
+.preview {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.img1 { background-image: url("https://i.pinimg.com/236x/59/c9/e0/59c9e09444f756ef56a4db202dbcf7a7.jpg"); }
+.img2 { background-image: url("https://i.pinimg.com/736x/ec/59/87/ec5987725b326cb569abbdae072d8676.jpg"); }
+.img3 { background-image: url("https://i.pinimg.com/236x/1.jpg"); }
+
+.add-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: #99AD7A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFF8EC;
+}
+
+/* ================= STRIP CARD ================= */
+.strip-card {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(220,204,172,0.3);
+  text-align: center;
+  color: #DCCCAC;
+  font-size: 11px;
+}
+
+/* ================= QUOTE ================= */
+.bottom-quote {
+  position: fixed;
+  right: 60px;
+  bottom: 50px;
+  max-width: 340px;
+  text-align: right;
+}
+
+.bottom-quote p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.8;
+  color: #DCCCAC;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="bg"></div>
+<div class="overlay"></div>
+
+<div class="center-text">
+  <div class="main">✧ keep writing ✧</div>
+  <div class="sub">your story is still unfolding</div>
+</div>
+
+<div class="left-card">
+
+  <div class="top-section">
+    <div>
+      <div class="left-group">
+        <div class="call-icon">🐰</div>
+      </div>
+      <div class="card-title">PORTFOLIO</div>
+    </div>
+
+    <div class="avatar"></div>
+  </div>
+
+  <div class="inner-card">
+    <div class="name-main">⚘. munchiela ˚🎀</div>
+    <div class="tagline">design • aesthetic • visual</div>
+
+    <div class="line"></div>
+
+    <div>⚘. red air</div>
+    <div class="tagline">design system</div>
+
+    <div class="line"></div>
+
+    <div>⚘. restless</div>
+    <div class="tagline">visual identity</div>
+  </div>
+
+  <div class="upload-card">
+    <div class="preview-group">
+      <div class="preview img1"></div>
+      <div class="preview img2"></div>
+      <div class="preview img3"></div>
+    </div>
+    <div class="add-btn">+</div>
+  </div>
+
+  <div class="strip-card">
+    ✧ things are going to be alright ✧
+  </div>
+
+</div>
+
+<div class="bottom-quote">
+  <p>
+    “A big dream with this little girl, no matter how we sleep,
+    we have to go to the dream even if we regret a little.
+    There are good things waiting for us.”
+  </p>
+</div>
+
+</body>
+</html>
